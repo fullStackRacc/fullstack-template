@@ -1,6 +1,8 @@
 const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
 const cors = require('cors');
+const { resolveInclude } = require('ejs');
+const { response } = require('express');
 const app = express();
 require('dotenv').config();
 
@@ -27,6 +29,13 @@ app.use(cors());
 Cool stuff goes here (raccoons(raccoons go here))
 
 -----------------------------------------------*/
+app.get('/', async (req, res) => {
+    try {
+        res.render('index.ejs')
+    } catch (e) {
+        response.status(500).send({ message: error.message })
+    }
+})
 
 app.listen(process.env.PORT || PORT, () => {
     console.log('it do be raccooning time :0')
