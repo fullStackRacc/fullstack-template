@@ -16,6 +16,18 @@ MongoClient.connect(dbConnectionString)
         collection = db.collection('raccoonImages')
     })
 
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cors());
+
+/*-----------------------------------------------
+
+Cool stuff goes here (raccoons(raccoons go here))
+
+-----------------------------------------------*/
+
 app.listen(process.env.PORT || PORT, () => {
     console.log('it do be raccooning time :0')
 })
