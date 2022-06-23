@@ -7,7 +7,7 @@
 
 //4. Connect to MongoDB - add connection string to .env file
 
-//5. Create Port
+//5. add .env to .gitignore and Create Port
 
 //----Test Mongo and Port connection
 

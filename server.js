@@ -5,7 +5,7 @@ const app = express();
 require('dotenv').config();
 
 let db,
-    dbConnectionString = process.env.DB_STRING
+    dbConnectionString = process.env.DB_STRING,
     dbName = 'raccoonapi',
     collection
 
@@ -15,3 +15,7 @@ MongoClient.connect(dbConnectionString)
         db = client.db(dbName)
         collection = db.collection('raccoonImages')
     })
+
+app.listen(process.env.PORT || PORT, () => {
+    console.log('it do be raccooning time :0')
+})
